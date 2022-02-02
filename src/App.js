@@ -13,6 +13,8 @@ import QrReader from "react-qr-reader";
 import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, child, push } from "firebase/database";
 
+import Form from './components/Form'
+
 //################################# START Firebase Settings ####################################
 //quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
 const firebaseConfig = {
@@ -127,6 +129,7 @@ function App() {
               >
                 Submit OS
               </Button>
+              <Form/>
             </Grid>
             {/* END Parte do codigo HTML responsavel por Ler o QR CODE */}
           </Grid>
