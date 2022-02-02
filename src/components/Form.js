@@ -1,24 +1,26 @@
 import React, { useState } from "react";
-
 import {
     TextField,
     Box,
     MenuItem,
   } from "@material-ui/core";
+import Electric from "./Electric";
+import Mechanical from "./Mechanical";
+import Unidentified from "./Unidentified";
 
 function Form () {
     
     const naturezas = [
         {
-          value: 'Electric',
+          value: 1,
           label: 'Elétrico',
         },
         {
-          value: 'Mechanical',
+          value: 2,
           label: 'Mecânico',
         },
         {
-          value: 'Unidentified',
+          value: 3,
           label: 'Não identificado',
         },
       ];
@@ -73,6 +75,27 @@ function Form () {
             </MenuItem>
           ))}
         </TextField>
+
+        {(() => {
+  
+          switch (natureza) {
+            case 1:
+                return (
+                  <Electric/>
+                )
+            case 2:
+                return (
+                  <Mechanical/>
+                )
+            case 3:
+                return (
+                  <Unidentified/>
+                )
+            default:
+                return null
+          }
+
+      })()}
       </div>
     </Box>
     )
