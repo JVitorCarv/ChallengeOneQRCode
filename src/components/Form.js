@@ -1,9 +1,35 @@
+import React, { useState } from "react";
+
 import {
     TextField,
     Box,
+    MenuItem,
   } from "@material-ui/core";
 
 function Form () {
+    
+    const naturezas = [
+        {
+          value: 'Electric',
+          label: 'Elétrico',
+        },
+        {
+          value: 'Mechanical',
+          label: 'Mecânico',
+        },
+        {
+          value: 'Unidentified',
+          label: 'Não identificado',
+        },
+      ];
+
+    const [natureza, setNatureza] = useState('');
+      
+    const handleChange = (event) => {
+        setNatureza(event.target.value);
+    };
+    
+    
     return (
         <Box
       component="form"
@@ -30,33 +56,23 @@ function Form () {
         <TextField
           required
           id="outlined-password-input"
-          label="Password"
+          label="Escreva seu número"
           type="number"
-          autoComplete="current-password"
         />
         <TextField
-          id="outlined-read-only-input"
-          label="Read Only"
-          defaultValue="Hello World"
-          InputProps={{
-            readOnly: true,
-          }}
-        />
-        <TextField
-          id="outlined-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField id="outlined-search" label="Search field" type="search" />
-        <TextField
-          id="outlined-helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          helperText="Some important text"
-        />
+          id="outlined-select-natureza"
+          select
+          label="Natureza do problema"
+          value={natureza}
+          onChange={handleChange}
+          helperText="Selecione a natureza do problema"
+        >
+          {naturezas.map((tipo) => (
+            <MenuItem key={tipo.value} value={tipo.value}>
+              {tipo.label}
+            </MenuItem>
+          ))}
+        </TextField>
       </div>
     </Box>
     )
