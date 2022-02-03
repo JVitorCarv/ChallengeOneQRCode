@@ -35,6 +35,14 @@ function App() {
   const [text, setText] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [scanResultWebCam, setScanResultWebCam] = useState("");
+  const [form, setForm] = useState({
+    problemDescription: "",
+    operatorName: "",
+    operatorPhone: "",
+    natureProblem: "",
+    nature: null,
+  });
+
   // carregando estilo customizado
   const classes = useStyles();
 
@@ -63,19 +71,21 @@ function App() {
   // função responsavel por INSERIR os dados obtidos a partir da leitura do QR CODE
   // para o firebase
   const submitOrder = () => {
+    console.log(form);
+
     // documentação para tempo real do firebase https://firebase.google.com/docs/database/web/start?authuser=0
-    const newPostKey = push(child(ref(database), "ativos")).key;
+    // const newPostKey = push(child(ref(database), "ativos")).key;
 
-    const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
+    // const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
 
-    set(ref(database, `ativos/${newPostKey}`), {
-      ativo: parsedData["ativo"],
-      tombamento: parsedData["tombamento"],
-      unidade: parsedData["unidade"],
-      setor: parsedData["setor"],
-    });
+    // set(ref(database, `ativos/${newPostKey}`), {
+    //   ativo: parsedData["ativo"],
+    //   tombamento: parsedData["tombamento"],
+    //   unidade: parsedData["unidade"],
+    //   setor: parsedData["setor"],
+    // });
 
-    setScanResultWebCam("");
+    // setScanResultWebCam("");
   };
 
   return (
@@ -121,7 +131,7 @@ function App() {
                 onScan={handleScanWebCam}
               />
               <h3>Scanned By WebCam Code: {scanResultWebCam}</h3>
-              <Form />
+              <Form form={form} setForm={setForm} />
               <Button
                 className={classes.btn}
                 variant="contained"
