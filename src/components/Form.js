@@ -1,42 +1,36 @@
 import React, { useState } from "react";
-import {
-    TextField,
-    Box,
-    MenuItem,
-  } from "@material-ui/core";
+import { TextField, Box, MenuItem } from "@material-ui/core";
 import Electric from "./Electric";
 import Mechanical from "./Mechanical";
 import Unidentified from "./Unidentified";
 
-function Form () {
-    
-    const naturezas = [
-        {
-          value: 1,
-          label: 'Elétrico',
-        },
-        {
-          value: 2,
-          label: 'Mecânico',
-        },
-        {
-          value: 3,
-          label: 'Não identificado',
-        },
-      ];
+function Form() {
+  const naturezas = [
+    {
+      value: 1,
+      label: "Elétrico",
+    },
+    {
+      value: 2,
+      label: "Mecânico",
+    },
+    {
+      value: 3,
+      label: "Não identificado",
+    },
+  ];
 
-    const [natureza, setNatureza] = useState('');
-      
-    const handleChange = (event) => {
-        setNatureza(event.target.value);
-    };
-    
-    
-    return (
-        <Box
+  const [natureza, setNatureza] = useState("");
+
+  const handleChange = (event) => {
+    setNatureza(event.target.value);
+  };
+
+  return (
+    <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
       noValidate
       autoComplete="off"
@@ -77,28 +71,20 @@ function Form () {
         </TextField>
 
         {(() => {
-  
           switch (natureza) {
             case 1:
-                return (
-                  <Electric/>
-                )
+              return <Electric />;
             case 2:
-                return (
-                  <Mechanical/>
-                )
+              return <Mechanical />;
             case 3:
-                return (
-                  <Unidentified/>
-                )
+              return <Unidentified />;
             default:
-                return null
+              return null;
           }
-
-      })()}
+        })()}
       </div>
     </Box>
-    )
+  );
 }
 
-export default Form
+export default Form;
