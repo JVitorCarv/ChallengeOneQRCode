@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/css/main.6dea0f05.chunk.css",
-    "main.js": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/main.1186f5c3.chunk.js",
-    "main.js.map": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/main.1186f5c3.chunk.js.map",
-    "runtime-main.js": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/runtime-main.b9d8f817.js",
-    "runtime-main.js.map": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/runtime-main.b9d8f817.js.map",
-    "static/js/2.97f636a4.chunk.js": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/2.97f636a4.chunk.js",
-    "static/js/2.97f636a4.chunk.js.map": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/2.97f636a4.chunk.js.map",
-    "static/js/3.9c78f5d1.chunk.js": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/3.9c78f5d1.chunk.js",
-    "static/js/3.9c78f5d1.chunk.js.map": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/3.9c78f5d1.chunk.js.map",
-    "index.html": "https://davidwilsonfs.github.io/ChallengeOneQRCode/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.97f636a4.chunk.js.LICENSE.txt": "https://davidwilsonfs.github.io/ChallengeOneQRCode/static/js/2.97f636a4.chunk.js.LICENSE.txt"
+    "main.css": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/css/main.6dea0f05.chunk.css",
+    "main.js": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/main.75a420ad.chunk.js",
+    "main.js.map": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/main.75a420ad.chunk.js.map",
+    "runtime-main.js": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/runtime-main.89fa0852.js",
+    "runtime-main.js.map": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/runtime-main.89fa0852.js.map",
+    "static/js/2.8f033841.chunk.js": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/2.8f033841.chunk.js",
+    "static/js/2.8f033841.chunk.js.map": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/2.8f033841.chunk.js.map",
+    "static/js/3.9c78f5d1.chunk.js": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/3.9c78f5d1.chunk.js",
+    "static/js/3.9c78f5d1.chunk.js.map": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/3.9c78f5d1.chunk.js.map",
+    "index.html": "https://jvitorcarv.github.io/ChallengeOneQRCode/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.8f033841.chunk.js.LICENSE.txt": "https://jvitorcarv.github.io/ChallengeOneQRCode/static/js/2.8f033841.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b9d8f817.js",
-    "static/js/2.97f636a4.chunk.js",
+    "static/js/runtime-main.89fa0852.js",
+    "static/js/2.8f033841.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.1186f5c3.chunk.js"
+    "static/js/main.75a420ad.chunk.js"
   ]
 }
