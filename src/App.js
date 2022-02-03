@@ -74,18 +74,18 @@ function App() {
     console.log(form);
 
     // documentação para tempo real do firebase https://firebase.google.com/docs/database/web/start?authuser=0
-    // const newPostKey = push(child(ref(database), "ativos")).key;
+    const newPostKey = push(child(ref(database), "ativos")).key;
 
-    // const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
+    const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
 
-    // set(ref(database, `ativos/${newPostKey}`), {
-    //   ativo: parsedData["ativo"],
-    //   tombamento: parsedData["tombamento"],
-    //   unidade: parsedData["unidade"],
-    //   setor: parsedData["setor"],
-    // });
+    set(ref(database, `ativos/${newPostKey}`), {
+      ativo: parsedData["ativo"],
+      tombamento: parsedData["tombamento"],
+      unidade: parsedData["unidade"],
+      setor: parsedData["setor"],
+    });
 
-    // setScanResultWebCam("");
+    setScanResultWebCam("");
   };
 
   return (
