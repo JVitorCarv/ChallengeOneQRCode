@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Container, makeStyles } from "@material-ui/core";
 import CreateQrCode from "./components/CreateQrcode";
 import ReaderQrCode from "./components/ReaderQrCode";
+import PmForm from "./components/PmForm";
 
 //################################# APP ####################################
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route exact path="/create-qrcode" element={<CreateQrCode />} />
           <Route exact path="/reader-qrcode" element={<ReaderQrCode />} />
+          <Route exact path="/reader-qrcode/form" element={<PmForm />} />
         </Routes>
       </Router>
     </Container>
@@ -25,7 +27,7 @@ function App() {
 
 // Criação de um estilo customizado
 const useStyles = makeStyles((theme) => ({
-  conatiner: {
+  container: {
     marginTop: 10,
   },
   title: {

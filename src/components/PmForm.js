@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, makeStyles, Button } from "@material-ui/core";
 import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, child, push } from "firebase/database";
-
-import Form from "./components/Form";
+import { useLocation, useNavigate } from "react-router-dom";
+import Form from "./Form";
 
 //################################# START Firebase Settings ####################################
 //quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
@@ -34,6 +34,12 @@ const initialState = {
 //################################# APP ####################################
 function PmForm() {
   const [form, setForm] = useState(initialState);
+  const navigate = useNavigate();
+  const { state } = useLocation();
+
+  useEffect(() => {
+    setForm(state);
+  }, [state]);
 
   // carregando estilo customizado
   const classes = useStyles();
@@ -47,6 +53,8 @@ function PmForm() {
     // const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
 
     set(ref(database, `ativos/${newPostKey}`), form);
+
+    navigate("/reader-qrcode");
   };
 
   return (
