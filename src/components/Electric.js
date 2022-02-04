@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@material-ui/core";
 
-function Electric() {
+function Electric({ form, setForm }) {
   const [state, setState] = React.useState({
     faltaEnergia: false,
     chaveFusivel: false,
@@ -18,10 +18,10 @@ function Electric() {
   });
 
   const handleChange = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
+    const obj = { ...state, [event.target.name]: event.target.checked };
+
+    setState(obj);
+    setForm({ ...form, natureForm: obj });
   };
 
   const { faltaEnergia, chaveFusivel, tensaoNormal, cheiroQueimado } = state;

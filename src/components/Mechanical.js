@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@material-ui/core";
 
-function Mechanical() {
+function Mechanical({ form, setForm }) {
   const [state, setState] = React.useState({
     nivelSuccao: false,
     valvulaSuccao: false,
@@ -21,10 +21,10 @@ function Mechanical() {
   });
 
   const handleChange = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
+    const obj = { ...state, [event.target.name]: event.target.checked };
+
+    setState(obj);
+    setForm({ ...form, natureForm: obj });
   };
 
   const {

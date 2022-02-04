@@ -29,19 +29,25 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 //################################# END Firebase Settings ####################################
 
+const initialState = {
+  ativo: "",
+  tombamento: "",
+  unidade: "",
+  setor: "",
+  problemDescription: "",
+  operatorName: "",
+  operatorPhone: "",
+  nature: null,
+  natureForm: null,
+};
+
 //################################# APP ####################################
 function App() {
   // States do app
   const [text, setText] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [scanResultWebCam, setScanResultWebCam] = useState("");
-  const [form, setForm] = useState({
-    problemDescription: "",
-    operatorName: "",
-    operatorPhone: "",
-    natureProblem: "",
-    nature: null,
-  });
+  // const [scanResultWebCam, setScanResultWebCam] = useState("");
+  const [form, setForm] = useState(initialState);
 
   // carregando estilo customizado
   const classes = useStyles();
@@ -63,8 +69,9 @@ function App() {
 
   // função executada quando há uma leitura do QR code pela camera do notebook
   const handleScanWebCam = (result) => {
+    console.log(result);
     if (result) {
-      setScanResultWebCam(result);
+      setForm({ ...form, ...result });
     }
   };
 
@@ -76,16 +83,9 @@ function App() {
     // documentação para tempo real do firebase https://firebase.google.com/docs/database/web/start?authuser=0
     const newPostKey = push(child(ref(database), "ativos")).key;
 
-    const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
+    // const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
 
-    set(ref(database, `ativos/${newPostKey}`), {
-      ativo: parsedData["ativo"],
-      tombamento: parsedData["tombamento"],
-      unidade: parsedData["unidade"],
-      setor: parsedData["setor"],
-    });
-
-    setScanResultWebCam("");
+    set(ref(database, `ativos/${newPostKey}`), form);
   };
 
   return (
@@ -130,7 +130,7 @@ function App() {
                 onError={handleErrorWebCam}
                 onScan={handleScanWebCam}
               />
-              <h3>Scanned By WebCam Code: {scanResultWebCam}</h3>
+              {/* <h3>Scanned By WebCam Code: {scanResultWebCam}</h3> */}
               <Form form={form} setForm={setForm} />
               <Button
                 className={classes.btn}

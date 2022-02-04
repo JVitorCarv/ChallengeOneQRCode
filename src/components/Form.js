@@ -27,11 +27,11 @@ function Form({ form, setForm }) {
   const handleNature = () => {
     switch (form.nature) {
       case 1:
-        return <Electric />;
+        return <Electric setForm={setForm} form={form} />;
       case 2:
-        return <Mechanical />;
+        return <Mechanical setForm={setForm} form={form} />;
       default:
-        return <Unidentified />;
+        return <Unidentified setForm={setForm} form={form} />;
     }
   };
 

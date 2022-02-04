@@ -1,7 +1,18 @@
 import React from "react";
 import { TextField, Button } from "@material-ui/core";
 
-function Unidentified() {
+function Unidentified({ form, setForm }) {
+  const [state, setState] = React.useState({
+    description: "",
+  });
+
+  const handleChange = (event) => {
+    const obj = { ...state, [event.target.name]: event.target.checked };
+
+    setState(obj);
+    setForm({ ...form, natureForm: obj });
+  };
+
   return (
     <div>
       <TextField
@@ -9,8 +20,10 @@ function Unidentified() {
         label="Descrição adicional"
         placeholder="Escreva aqui..."
         multiline
+        value={state.description}
+        onChange={handleChange}
       />
-      <p>Caso sinta necessidade, entre em contato com um CCO:</p>
+      <p>Caso sinta necessidade, entre em contato com o CCO:</p>
       <Button
         variant="contained"
         href="https://servicos.compesa.com.br"
