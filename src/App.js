@@ -4,6 +4,7 @@ import { Container, makeStyles } from "@material-ui/core";
 import CreateQrCode from "./components/CreateQrcode";
 import ReaderQrCode from "./components/ReaderQrCode";
 import PmForm from "./components/PmForm";
+import SuccesForm from "./components/SuccesForm";
 
 //################################# APP ####################################
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/create-qrcode" element={<CreateQrCode />} />
           <Route exact path="/reader-qrcode" element={<ReaderQrCode />} />
           <Route exact path="/reader-qrcode/form" element={<PmForm />} />
+          <Route exact path="/success" element={<SuccesForm />} />
         </Routes>
       </Router>
     </Container>
