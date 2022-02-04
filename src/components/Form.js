@@ -47,6 +47,38 @@ function Form({ form, setForm }) {
       <div>
         <TextField
           required
+          id="ativo"
+          label="Serial do ativo"
+          placeholder="Insira aqui..."
+          value={form.ativo}
+          disabled
+        />
+        <TextField
+          required
+          id="setor"
+          label="Setor do ativo"
+          placeholder="Insira aqui..."
+          value={form.setor}
+          disabled
+        />
+        <TextField
+          required
+          id="tombamento"
+          label="Serial do tombamento"
+          placeholder="Insira aqui..."
+          value={form.tombamento}
+          disabled
+        />
+        <TextField
+          required
+          id="unidade"
+          label="Serial da unidade"
+          placeholder="Insira aqui..."
+          value={form.unidade}
+          disabled
+        />
+        <TextField
+          required
           id="outlined-textarea"
           label="Descrição do problema"
           placeholder="Escreva aqui..."

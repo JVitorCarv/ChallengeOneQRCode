@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import { Card, CardContent, makeStyles, Button } from "@material-ui/core";
+import { initializeApp } from "firebase/app";
+import { getDatabase, set, ref, child, push } from "firebase/database";
+
+import Form from "./components/Form";
+
+//################################# START Firebase Settings ####################################
+//quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
+const firebaseConfig = {
+  apiKey:
+    "AAAAplipsUI:APA91bGQbCDPCuHA-XQRVNJRvYysIqzPqJ4JXk4d9iowYwHgCel81VZCQYqgdqEQaVX2qGWmwyLjGrnkpKtAs56LhlFZaCdRHZMpn9XVLcxtEc7c5GeiD-uMuibIkDFAQVpfV7mtFduP",
+  authDomain: "summerjob-9c9bf.firebaseapp.com",
+  databaseURL: "https://summerjob-9c9bf-default-rtdb.firebaseio.com/",
+};
+const app = initializeApp(firebaseConfig);
+
+// Get a reference to the database service
+const database = getDatabase(app);
+//################################# END Firebase Settings ####################################
+
+const initialState = {
+  ativo: "",
+  tombamento: "",
+  unidade: "",
+  setor: "",
+  problemDescription: "",
+  operatorName: "",
+  operatorPhone: "",
+  nature: null,
+  natureForm: null,
+};
+
+//################################# APP ####################################
+function PmForm() {
+  const [form, setForm] = useState(initialState);
+
+  // carregando estilo customizado
+  const classes = useStyles();
+
+  const submitOrder = () => {
+    console.log(form);
+
+    // documentação para tempo real do firebase https://firebase.google.com/docs/database/web/start?authuser=0
+    const newPostKey = push(child(ref(database), "ativos")).key;
+
+    // const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
+
+    set(ref(database, `ativos/${newPostKey}`), form);
+  };
+
+  return (
+    <Card>
+      <h2 className={classes.title}>PM Form</h2>
+      <CardContent>
+        {/* Parte do codigo HTML responsavel por gerar o QR CODE */}
+
+        {/* Parte do codigo HTML responsavel por Ler o QR CODE */}
+        <h3>PM Form</h3>
+
+        <Form form={form} setForm={setForm} />
+        <Button
+          className={classes.btn}
+          variant="contained"
+          color="primary"
+          onClick={submitOrder}
+        >
+          Submit PM
+        </Button>
+        {/* END Parte do codigo HTML responsavel por Ler o QR CODE */}
+      </CardContent>
+    </Card>
+  );
+}
+
+// Criação de um estilo customizado
+const useStyles = makeStyles((theme) => ({
+  conatiner: {
+    marginTop: 10,
+  },
+  title: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#3f51b5",
+    color: "#fff",
+    padding: 20,
+  },
+  btn: {
+    marginTop: 10,
+    marginBottom: 20,
+  },
+}));
+export default PmForm;
