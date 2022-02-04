@@ -7,7 +7,7 @@ function Unidentified({ form, setForm }) {
   });
 
   const handleChange = (event) => {
-    const obj = { ...state, [event.target.name]: event.target.checked };
+    const obj = { ...state, description: event.target.value };
 
     setState(obj);
     setForm({ ...form, natureForm: obj });
