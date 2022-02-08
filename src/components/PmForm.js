@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Card,
-  CardContent,
-  makeStyles,
-  Button,
-  Snackbar,
-} from "@material-ui/core";
+import { Card, CardContent, makeStyles, Button } from "@material-ui/core";
 import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, child, push } from "firebase/database";
 import { useLocation, useNavigate } from "react-router-dom";
