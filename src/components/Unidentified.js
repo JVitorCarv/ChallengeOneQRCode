@@ -16,12 +16,13 @@ function Unidentified({ form, setForm }) {
   return (
     <div>
       <TextField
+        required
         id="outlined-textarea"
         label="Descrição adicional"
         placeholder="Escreva aqui..."
         multiline
         value={state.description}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e, "description")}
       />
       <p>Caso sinta necessidade, entre em contato com o CCO:</p>
       <Button
