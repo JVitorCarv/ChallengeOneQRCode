@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container } from "@material-ui/core";
 import CreateQrCode from "./components/CreateQrcode";
 import ReaderQrCode from "./components/ReaderQrCode";
 import PmForm from "./components/PmForm";
@@ -11,7 +12,7 @@ import { PREFIX_PATH } from "./helper/constants";
 //################################# APP ####################################
 function App() {
   return (
-    <>
+    <Container style={{ padding: 0 }}>
       <Router>
         <Header />
 
@@ -39,7 +40,7 @@ function App() {
           />
         </Routes>
       </Router>
-    </>
+    </Container>
   );
 }
 
