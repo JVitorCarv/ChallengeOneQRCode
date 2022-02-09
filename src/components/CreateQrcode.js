@@ -29,7 +29,7 @@ function CreateQrCode() {
     <Card>
       <CardContent>
         <TextField
-          label="Enter Text Here"
+          label="Insira aqui os dados"
           onChange={(e) => setText(e.target.value)}
         />
         <Button
@@ -38,7 +38,7 @@ function CreateQrCode() {
           color="primary"
           onClick={() => generateQrCode()}
         >
-          Generate
+          Gerar
         </Button>
         <br />
         <br />

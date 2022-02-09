@@ -64,7 +64,7 @@ function PmForm() {
         {/* Parte do codigo HTML responsavel por gerar o QR CODE */}
 
         {/* Parte do codigo HTML responsavel por Ler o QR CODE */}
-        <h3>PM Form</h3>
+        <h3>Preencha os dados a seguir</h3>
 
         <Form form={form} setForm={setForm} />
         <Button
