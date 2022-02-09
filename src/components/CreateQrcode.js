@@ -27,7 +27,6 @@ function CreateQrCode() {
 
   return (
     <Card>
-      <h2 className={classes.title}>Generate QR Code</h2>
       <CardContent>
         <TextField
           label="Enter Text Here"
