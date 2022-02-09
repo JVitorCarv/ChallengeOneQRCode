@@ -11,18 +11,34 @@ import UseManual from "./components/UseManual";
 //################################# APP ####################################
 function App() {
   const classes = useStyles();
-
+  const PREFIX_PATH = process.env.PREFIX_PATH ? process.env.PREFIX_PATH : "";
   return (
     <Container className={classes.conatiner}>
       <Router>
         <Header />
 
         <Routes>
-          <Route exact path="/" element={<UseManual />} />
-          <Route exact path="/create-qrcode" element={<CreateQrCode />} />
-          <Route exact path="/reader-qrcode" element={<ReaderQrCode />} />
-          <Route exact path="/reader-qrcode/form" element={<PmForm />} />
-          <Route exact path="/success" element={<SuccesForm />} />
+          <Route exact path={`${PREFIX_PATH}/`} element={<UseManual />} />
+          <Route
+            exact
+            path={`${PREFIX_PATH}/create-qrcode`}
+            element={<CreateQrCode />}
+          />
+          <Route
+            exact
+            path={`${PREFIX_PATH}/reader-qrcode`}
+            element={<ReaderQrCode />}
+          />
+          <Route
+            exact
+            path={`${PREFIX_PATH}/reader-qrcode/form`}
+            element={<PmForm />}
+          />
+          <Route
+            exact
+            path={`${PREFIX_PATH}/success`}
+            element={<SuccesForm />}
+          />
         </Routes>
       </Router>
     </Container>

@@ -9,7 +9,9 @@ function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const [title, setTitle] = useState("Instruções de Uso");
-  const deltaPng = "/assets/delta.png";
+
+  const PREFIX_PATH = process.env.PREFIX_PATH ? process.env.PREFIX_PATH : "";
+  const deltaPng = `.${PREFIX_PATH}/assets/delta.png`;
 
   useEffect(() => {
     switch (location.pathname) {
