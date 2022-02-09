@@ -2,17 +2,13 @@ import TextField from "@material-ui/core/TextField/TextField";
 import React from "react";
 import QrReader from "react-qr-reader";
 import { useNavigate } from "react-router-dom";
+import { PREFIX_PATH } from "../helper/constants";
 import { ButtonPrimary, ButtonSecondary, StyledScanQr } from "../styles";
 
 //################################# APP ####################################
 function ReaderQrCode() {
   const navigate = useNavigate();
 
-  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
-    ? process.env.REACT_APP_PREFIX_PATH
-    : "";
-  // carregando estilo customizado
-  // const classes = useStyles();
 
   // função responsavel por gerenciar os erros da leitura do QR CODE
   const handleErrorWebCam = (error) => {

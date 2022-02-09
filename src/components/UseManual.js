@@ -1,12 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { PREFIX_PATH } from "../helper/constants";
 import { ButtonPrimary, StyledManual } from "../styles";
 
 function UseManual() {
   const navigate = useNavigate();
-  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
-    ? process.env.REACT_APP_PREFIX_PATH
-    : "";
   const srcImage = `${PREFIX_PATH}/assets/qrcode.png`;
 
   console.log(process.env.PREFIX_PATH);

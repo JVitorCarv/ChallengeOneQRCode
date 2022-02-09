@@ -7,13 +7,11 @@ import PmForm from "./components/PmForm";
 import SuccesForm from "./components/SuccesForm";
 import Header from "./components/Header";
 import UseManual from "./components/UseManual";
+import { PREFIX_PATH } from "./helper/constants";
 
 //################################# APP ####################################
 function App() {
   const classes = useStyles();
-  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
-    ? process.env.REACT_APP_PREFIX_PATH
-    : "";
 
   return (
     <Container className={classes.conatiner}>

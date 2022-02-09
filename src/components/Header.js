@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { PREFIX_PATH } from "../helper/constants";
 import { StyledHeader } from "../styles";
 import BasicMenu from "./MenuHeader";
 
@@ -10,9 +11,6 @@ function Header() {
   const location = useLocation();
   const [title, setTitle] = useState("Instruções de Uso");
 
-  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
-    ? process.env.REACT_APP_PREFIX_PATH
-    : "";
   const deltaPng = `${PREFIX_PATH}/assets/delta.png`;
 
   useEffect(() => {
