@@ -32,7 +32,7 @@ function Header() {
   }, [location]);
 
   const handleHome = () => {
-    navigate("/");
+    navigate(`${PREFIX_PATH}/`);
   };
 
   return (

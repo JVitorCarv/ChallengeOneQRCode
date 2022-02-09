@@ -8,6 +8,10 @@ export default function BasicMenu() {
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
 
+  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
+    ? process.env.REACT_APP_PREFIX_PATH
+    : "";
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -16,7 +20,7 @@ export default function BasicMenu() {
   };
 
   const handleRoute = (route) => {
-    navigate(route);
+    navigate(`${PREFIX_PATH}${route}`);
     handleClose();
   };
 

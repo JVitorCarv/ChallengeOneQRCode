@@ -11,7 +11,7 @@ function UseManual() {
 
   console.log(process.env.PREFIX_PATH);
   const handleButton = () => {
-    navigate("/reader-qrcode");
+    navigate(`${PREFIX_PATH}/reader-qrcode`);
   };
 
   return (

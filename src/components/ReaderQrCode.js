@@ -7,6 +7,10 @@ import { ButtonPrimary, ButtonSecondary, StyledScanQr } from "../styles";
 //################################# APP ####################################
 function ReaderQrCode() {
   const navigate = useNavigate();
+
+  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
+    ? process.env.REACT_APP_PREFIX_PATH
+    : "";
   // carregando estilo customizado
   // const classes = useStyles();
 
@@ -19,12 +23,12 @@ function ReaderQrCode() {
   const handleScanWebCam = (result) => {
     if (result) {
       const parsed = JSON.parse(JSON.parse(result));
-      navigate("/reader-qrcode/form", { state: parsed });
+      navigate(`${PREFIX_PATH}/reader-qrcode/form`, { state: parsed });
     }
   };
 
   const handleHome = () => {
-    navigate("/");
+    navigate(`${PREFIX_PATH}/`);
   };
 
   return (
