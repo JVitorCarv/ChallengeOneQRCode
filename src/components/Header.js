@@ -11,7 +11,7 @@ function Header() {
   const location = useLocation();
   const [title, setTitle] = useState("Instruções de Uso");
 
-  const deltaPng = `${PREFIX_PATH}/assets/delta.png`;
+  const deltaPng = `https://i.imgur.com/p4UauNl.jpg`;
 
   useEffect(() => {
     switch (location.pathname) {
