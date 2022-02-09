@@ -4,9 +4,12 @@ import { ButtonPrimary, StyledManual } from "../styles";
 
 function UseManual() {
   const navigate = useNavigate();
-  const PREFIX_PATH = process.env.PREFIX_PATH ? process.env.PREFIX_PATH : "";
+  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
+    ? process.env.REACT_APP_PREFIX_PATH
+    : "";
   const srcImage = `${PREFIX_PATH}/assets/qrcode.png`;
 
+  console.log(process.env.PREFIX_PATH);
   const handleButton = () => {
     navigate("/reader-qrcode");
   };

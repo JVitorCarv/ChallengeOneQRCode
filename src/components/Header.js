@@ -10,7 +10,9 @@ function Header() {
   const location = useLocation();
   const [title, setTitle] = useState("Instruções de Uso");
 
-  const PREFIX_PATH = process.env.PREFIX_PATH ? process.env.PREFIX_PATH : "";
+  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
+    ? process.env.REACT_APP_PREFIX_PATH
+    : "";
   const deltaPng = `${PREFIX_PATH}/assets/delta.png`;
 
   useEffect(() => {

@@ -11,7 +11,10 @@ import UseManual from "./components/UseManual";
 //################################# APP ####################################
 function App() {
   const classes = useStyles();
-  const PREFIX_PATH = process.env.PREFIX_PATH ? process.env.PREFIX_PATH : "";
+  const PREFIX_PATH = process.env.REACT_APP_PREFIX_PATH
+    ? process.env.REACT_APP_PREFIX_PATH
+    : "";
+
   return (
     <Container className={classes.conatiner}>
       <Router>
