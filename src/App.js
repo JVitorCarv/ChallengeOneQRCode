@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container, makeStyles } from "@material-ui/core";
 import CreateQrCode from "./components/CreateQrcode";
 import ReaderQrCode from "./components/ReaderQrCode";
 import PmForm from "./components/PmForm";
@@ -11,10 +10,8 @@ import { PREFIX_PATH } from "./helper/constants";
 
 //################################# APP ####################################
 function App() {
-  const classes = useStyles();
-
   return (
-    <Container className={classes.conatiner}>
+    <>
       <Router>
         <Header />
 
@@ -42,26 +39,8 @@ function App() {
           />
         </Routes>
       </Router>
-    </Container>
+    </>
   );
 }
 
-// Criação de um estilo customizado
-const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop: 10,
-  },
-  title: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#3f51b5",
-    color: "#fff",
-    padding: 20,
-  },
-  btn: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
-}));
 export default App;
