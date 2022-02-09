@@ -11,7 +11,7 @@ function Header() {
   const [title, setTitle] = useState("Instruções de Uso");
 
   const PREFIX_PATH = process.env.PREFIX_PATH ? process.env.PREFIX_PATH : "";
-  const deltaPng = `.${PREFIX_PATH}/assets/delta.png`;
+  const deltaPng = `${PREFIX_PATH}/assets/delta.png`;
 
   useEffect(() => {
     switch (location.pathname) {

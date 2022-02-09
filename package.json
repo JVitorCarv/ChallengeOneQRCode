@@ -23,8 +23,8 @@
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
-    "build": "cross-env PUBLIC_URL='https://davidwilsonfs.github.io/ChallengeOneQRCode/' PREFIX_PATH='ChallengeOneQRCode' react-scripts build",
-    "build:vitor": "cross-env PUBLIC_URL='https://jvitorcarv.github.io/ChallengeOneQRCode/' PREFIX_PATH='ChallengeOneQRCode' react-scripts build",
+    "build": "cross-env PUBLIC_URL='https://davidwilsonfs.github.io/ChallengeOneQRCode/' PREFIX_PATH='/ChallengeOneQRCode' react-scripts build",
+    "build:vitor": "cross-env PUBLIC_URL='https://jvitorcarv.github.io/ChallengeOneQRCode/' PREFIX_PATH='/ChallengeOneQRCode' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
