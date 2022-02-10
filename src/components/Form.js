@@ -36,89 +36,80 @@ function Form({ form, setForm }) {
   };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <div>
-        <TextField
-          required
-          id="ativo"
-          label="Serial do ativo"
-          placeholder="Insira aqui..."
-          value={form.ativo}
-          disabled
-        />
-        <TextField
-          required
-          id="setor"
-          label="Setor do ativo"
-          placeholder="Insira aqui..."
-          value={form.setor}
-          disabled
-        />
-        <TextField
-          required
-          id="tombamento"
-          label="Serial do tombamento"
-          placeholder="Insira aqui..."
-          value={form.tombamento}
-          disabled
-        />
-        <TextField
-          required
-          id="unidade"
-          label="Serial da unidade"
-          placeholder="Insira aqui..."
-          value={form.unidade}
-          disabled
-        />
-        <TextField
-          required
-          id="outlined-textarea"
-          label="Descrição do problema"
-          placeholder="Escreva aqui..."
-          multiline
-          value={form.problemDescription}
-          onChange={(e) => handleChange(e, "problemDescription")}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Seu nome"
-          placeholder="Insira seu nome..."
-          value={form.operatorName}
-          onChange={(e) => handleChange(e, "operatorName")}
-        />
-        <TextField
-          required
-          id="outlined-password-input"
-          label="Escreva seu telefone"
-          value={form.operatorPhone}
-          onChange={(e) => handleChange(e, "operatorPhone")}
-        />
-        <TextField
-          id="outlined-select-natureza"
-          select
-          label="Natureza do problema"
-          value={form.nature}
-          onChange={(e) => handleChange(e, "nature")}
-          helperText="Selecione a natureza do problema"
-        >
-          {naturezas.map((tipo) => (
-            <MenuItem key={tipo.value} value={tipo.value}>
-              {tipo.label}
-            </MenuItem>
-          ))}
-        </TextField>
+    <div>
+      <TextField
+        required
+        id="ativo"
+        label="Serial do ativo"
+        placeholder="Insira aqui..."
+        value={form.ativo}
+        disabled
+      />
+      <TextField
+        required
+        id="setor"
+        label="Setor do ativo"
+        placeholder="Insira aqui..."
+        value={form.setor}
+        disabled
+      />
+      <TextField
+        required
+        id="tombamento"
+        label="Serial do tombamento"
+        placeholder="Insira aqui..."
+        value={form.tombamento}
+        disabled
+      />
+      <TextField
+        required
+        id="unidade"
+        label="Serial da unidade"
+        placeholder="Insira aqui..."
+        value={form.unidade}
+        disabled
+      />
+      <TextField
+        required
+        id="outlined-textarea"
+        label="Descrição do problema"
+        placeholder="Escreva aqui..."
+        multiline
+        value={form.problemDescription}
+        onChange={(e) => handleChange(e, "problemDescription")}
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Seu nome"
+        placeholder="Insira seu nome..."
+        value={form.operatorName}
+        onChange={(e) => handleChange(e, "operatorName")}
+      />
+      <TextField
+        required
+        id="outlined-password-input"
+        label="Escreva seu telefone"
+        value={form.operatorPhone}
+        onChange={(e) => handleChange(e, "operatorPhone")}
+      />
+      <TextField
+        id="outlined-select-natureza"
+        select
+        label="Natureza do problema"
+        value={form.nature}
+        onChange={(e) => handleChange(e, "nature")}
+        helperText="Selecione a natureza do problema"
+      >
+        {naturezas.map((tipo) => (
+          <MenuItem key={tipo.value} value={tipo.value}>
+            {tipo.label}
+          </MenuItem>
+        ))}
+      </TextField>
 
-        {form.nature && handleNature()}
-      </div>
-    </Box>
+      {form.nature && handleNature()}
+    </div>
   );
 }
 

@@ -192,3 +192,39 @@ export const ButtonPrimary = styled(Button)`
     color: #8dc544;
   }
 `;
+
+
+export const StyledSuccesForm = styled.div`
+  display: flex;
+  flex-direction: colunm;
+  font-family: Roboto;
+  font-style: normal;
+
+  h1 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #1a1a1a;
+  }
+
+  p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #333333;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    button {
+      margin: 10px;
+    }
+  }
+`;

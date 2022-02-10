@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, makeStyles, Button } from "@material-ui/core";
 import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, child, push } from "firebase/database";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -35,14 +34,11 @@ const initialState = {
 function PmForm() {
   const [form, setForm] = useState(initialState);
   const navigate = useNavigate();
-  const { state } = useLocation();
+  // const { state } = useLocation();
 
-  useEffect(() => {
-    setForm(state);
-  }, [state]);
-
-  // carregando estilo customizado
-  const classes = useStyles();
+  // useEffect(() => {
+  //   setForm(state);
+  // }, [state]);
 
   const submitOrder = () => {
     console.log(form);
@@ -58,45 +54,19 @@ function PmForm() {
   };
 
   return (
-    <Card>
-      <h2 className={classes.title}>Formulário da PM</h2>
-      <CardContent>
-        {/* Parte do codigo HTML responsavel por gerar o QR CODE */}
-
-        {/* Parte do codigo HTML responsavel por Ler o QR CODE */}
-        <h3>Preencha os dados a seguir</h3>
-
-        <Form form={form} setForm={setForm} />
-        <Button
-          className={classes.btn}
-          variant="contained"
-          color="primary"
-          onClick={submitOrder}
-        >
-          Enviar PM
-        </Button>
-        {/* END Parte do codigo HTML responsavel por Ler o QR CODE */}
-      </CardContent>
-    </Card>
+    <div>
+      <Form form={form} setForm={setForm} />
+      <Button
+        className={classes.btn}
+        variant="contained"
+        color="primary"
+        onClick={submitOrder}
+      >
+        Enviar PM
+      </Button>
+      {/* END Parte do codigo HTML responsavel por Ler o QR CODE */}
+    </div>
   );
 }
 
-// Criação de um estilo customizado
-const useStyles = makeStyles((theme) => ({
-  conatiner: {
-    marginTop: 10,
-  },
-  title: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#3f51b5",
-    color: "#fff",
-    padding: 20,
-  },
-  btn: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
-}));
 export default PmForm;

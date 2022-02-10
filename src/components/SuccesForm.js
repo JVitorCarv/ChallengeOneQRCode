@@ -1,37 +1,31 @@
 import React from "react";
-import { Container, makeStyles, Card, CardContent } from "@material-ui/core";
+import { ButtonPrimary, ButtonSecondary, StyledSuccesForm } from "../styles";
+import { PREFIX_PATH } from "../helper/constants";
+import { useNavigate } from "react-router-dom";
 
 //################################# APP ####################################
-function App() {
-  const classes = useStyles();
+function SuccesForm() {
+  const navigate = useNavigate();
+
+  const handleHome = () => {
+    navigate(`${PREFIX_PATH}/`);
+  };
 
   return (
-    <Container className={classes.conatiner}>
-      <Card>
-        <CardContent>
-          <h3>Sucesso</h3>
-        </CardContent>
-      </Card>
-    </Container>
+    <StyledSuccesForm>
+      <h1>O Pedido de Manutenção foi enviado e recebido pelo CCO</h1>
+
+      <p>
+        Em breve o PM será registrado e entrará em análise para a realização da
+        manutenção
+      </p>
+
+      <div className="action-buttons">
+        <ButtonSecondary onClick={handleHome}>Voltar</ButtonSecondary>
+        <ButtonPrimary>Ler Novo QR COde</ButtonPrimary>
+      </div>
+    </StyledSuccesForm>
   );
 }
 
-// Criação de um estilo customizado
-const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop: 10,
-  },
-  title: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#3f51b5",
-    color: "#fff",
-    padding: 20,
-  },
-  btn: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
-}));
-export default App;
+export default SuccesForm;
