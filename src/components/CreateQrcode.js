@@ -10,7 +10,6 @@ import QRCode from "qrcode";
 
 function CreateQrCode() {
   // States do app
-  // const [text, setText] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   const [nomeAtivo, setNomeAtivo] = useState("");
@@ -23,7 +22,6 @@ function CreateQrCode() {
   // codigo responsavel por gerar o QR code a partir do dado passado para o input
   const generateQrCode = async () => {
     try {
-      // const response = await QRCode.toDataURL(text);
       const response = await QRCode.toDataURL('"{\\"tombamento\\":' + parseInt(tombamento) + ',\\"unidade\\":\\"' + unidade + '\\",\\"setor\\":\\"' + setor + '\\",\\"ativo\\":\\"' + nomeAtivo + '\\"}"');
       setImageUrl(response);
     } catch (error) {
@@ -57,7 +55,7 @@ function CreateQrCode() {
         <TextField
           required
           id="outlined-required"
-          label="Unidade do ativo..."
+          label="Unidade do ativo"
           placeholder="Escreva aqui..."
           // value={form.operatorPhone}
           onChange={(e) => setUnidade(e.target.value)}
@@ -65,7 +63,7 @@ function CreateQrCode() {
         <TextField
           required
           id="outlined-required"
-          label="Setor do ativo..."
+          label="Setor do ativo"
           placeholder="Escreva aqui..."
           // value={form.nature}
           onChange={(e) => setSetor(e.target.value)}

@@ -49,7 +49,7 @@ function Form({ form, setForm }) {
           required
           id="ativo"
           label="Serial do ativo"
-          placeholder="Insira aqui..."
+          placeholder="Escreva aqui..."
           value={form.ativo}
           disabled
         />
@@ -57,7 +57,7 @@ function Form({ form, setForm }) {
           required
           id="setor"
           label="Setor do ativo"
-          placeholder="Insira aqui..."
+          placeholder="Escreva aqui..."
           value={form.setor}
           disabled
         />
@@ -65,7 +65,7 @@ function Form({ form, setForm }) {
           required
           id="tombamento"
           label="Serial do tombamento"
-          placeholder="Insira aqui..."
+          placeholder="Escreva aqui..."
           value={form.tombamento}
           disabled
         />
@@ -73,7 +73,7 @@ function Form({ form, setForm }) {
           required
           id="unidade"
           label="Serial da unidade"
-          placeholder="Insira aqui..."
+          placeholder="Escreva aqui..."
           value={form.unidade}
           disabled
         />
@@ -90,14 +90,15 @@ function Form({ form, setForm }) {
           required
           id="outlined-required"
           label="Seu nome"
-          placeholder="Insira seu nome..."
+          placeholder="Escreva aqui..."
           value={form.operatorName}
           onChange={(e) => handleChange(e, "operatorName")}
         />
         <TextField
           required
           id="outlined-password-input"
-          label="Escreva seu telefone"
+          label="Telefone"
+          placeholder="Escreva aqui..."
           value={form.operatorPhone}
           onChange={(e) => handleChange(e, "operatorPhone")}
         />

@@ -9,7 +9,7 @@ function App() {
     <Container className={classes.conatiner}>
       <Card>
         <CardContent>
-          <h3>Sucesso</h3>
+          <h3>Pedido de Manutenção enviado com sucesso!</h3>
         </CardContent>
       </Card>
     </Container>
