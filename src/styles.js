@@ -18,12 +18,20 @@ export const StyledHeader = styled.header`
 
     .content-left {
       display: flex;
+      align-items: center;
     }
 
     .image-container {
       cursor: pointer;
-      width: 31px;
-      height: 31px;
+      width: 40px;
+      height: 40px;
+      border: 1px #ffffff solid;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       img {
         width: 31px;
         height: 31px;
