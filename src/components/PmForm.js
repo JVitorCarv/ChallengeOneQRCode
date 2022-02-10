@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Form from "./Form";
 
 //################################# START Firebase Settings ####################################
-//quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
+
 const firebaseConfig = {
   apiKey:
     "AAAAplipsUI:APA91bGQbCDPCuHA-XQRVNJRvYysIqzPqJ4JXk4d9iowYwHgCel81VZCQYqgdqEQaVX2qGWmwyLjGrnkpKtAs56LhlFZaCdRHZMpn9XVLcxtEc7c5GeiD-uMuibIkDFAQVpfV7mtFduP",
@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 
 // Get a reference to the database service
 const database = getDatabase(app);
+
 //################################# END Firebase Settings ####################################
 
 const initialState = {

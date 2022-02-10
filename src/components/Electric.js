@@ -40,7 +40,7 @@ function Electric({ form, setForm }) {
                   name="faltaEnergia"
                 />
               }
-              label="Há falta de energia na vizinhança?"
+              label="Há falta de energia na vizinhança"
             />
             <FormControlLabel
               control={
@@ -50,7 +50,7 @@ function Electric({ form, setForm }) {
                   name="chaveFusivel"
                 />
               }
-              label="Chave fusível (canela, banana) aberta?"
+              label="Chave fusível (canela, banana) aberta"
             />
             <FormControlLabel
               control={
@@ -60,7 +60,7 @@ function Electric({ form, setForm }) {
                   name="tensaoNormal"
                 />
               }
-              label="Tensão da unidade normal?"
+              label="Tensão da unidade normal"
             />
             <FormControlLabel
               control={
@@ -70,11 +70,11 @@ function Electric({ form, setForm }) {
                   name="cheiroQueimado"
                 />
               }
-              label="Cheiro de queimado?"
+              label="Cheiro de queimado"
             />
           </FormGroup>
           <FormHelperText>
-            Marque as caixas de acordo com os problemas identificados
+            Selecione o que for verdadeiro
           </FormHelperText>
         </FormControl>
       </Box>

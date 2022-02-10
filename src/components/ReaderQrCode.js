@@ -41,7 +41,7 @@ function ReaderQrCode() {
       </div>
 
       <p className="details">
-        Certifique-se que o QR Code esteja bem centralizado no quadrado verde
+        Certifique-se de que o QR Code esteja bem centralizado no quadrado verde
       </p>
 
       <div className="code-content">

@@ -51,7 +51,7 @@ function Mechanical({ form, setForm }) {
                   name="nivelSuccao"
                 />
               }
-              label="O nível de succção está normal?"
+              label="O nível de succção está normal"
             />
             <FormControlLabel
               control={
@@ -61,7 +61,7 @@ function Mechanical({ form, setForm }) {
                   name="valvulaSuccao"
                 />
               }
-              label="A válvula de sucção está aberta?"
+              label="A válvula de sucção está aberta"
             />
             <FormControlLabel
               control={
@@ -71,7 +71,7 @@ function Mechanical({ form, setForm }) {
                   name="valvulaRecalque"
                 />
               }
-              label="A válvula de recalque está aberta?"
+              label="A válvula de recalque está aberta"
             />
             <FormControlLabel
               control={
@@ -81,7 +81,7 @@ function Mechanical({ form, setForm }) {
                   name="vibracaoAnormal"
                 />
               }
-              label="A vibração está anormal?"
+              label="A vibração está anormal"
             />
             <FormControlLabel
               control={
@@ -91,7 +91,7 @@ function Mechanical({ form, setForm }) {
                   name="bombaTravada"
                 />
               }
-              label="A bomba está travada?"
+              label="A bomba está travada"
             />
             <FormControlLabel
               control={
@@ -101,7 +101,7 @@ function Mechanical({ form, setForm }) {
                   name="barulhoAnormal"
                 />
               }
-              label="Há um barulho anormal?"
+              label="Há um barulho anormal"
             />
             <FormControlLabel
               control={
@@ -111,11 +111,11 @@ function Mechanical({ form, setForm }) {
                   name="gaxetaVazamento"
                 />
               }
-              label="A gaxeta está com vazamento?"
+              label="A gaxeta está com vazamento"
             />
           </FormGroup>
           <FormHelperText>
-            Marque as caixas de acordo com os problemas identificados
+            Selecione o que for verdadeiro
           </FormHelperText>
         </FormControl>
       </Box>
