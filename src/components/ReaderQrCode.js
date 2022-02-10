@@ -17,7 +17,6 @@ function ReaderQrCode() {
 
   // função executada quando há uma leitura do QR code pela camera do notebook
   const handleScanWebCam = (result) => {
-    console.log(result);
     if (result) {
       const parsed = JSON.parse(result);
       navigate(`${PREFIX_PATH}/reader-qrcode/ativo-details`, { state: parsed });

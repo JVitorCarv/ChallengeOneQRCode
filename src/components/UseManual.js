@@ -7,7 +7,6 @@ function UseManual() {
   const navigate = useNavigate();
   const srcImage = `${PREFIX_PATH}/assets/qrcode.png`;
 
-  console.log(process.env.PREFIX_PATH);
   const handleButton = () => {
     navigate(`${PREFIX_PATH}/reader-qrcode`);
   };
