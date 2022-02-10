@@ -1,113 +1,147 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  makeStyles,
-  TextField,
-  Button,
-} from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import QRCode from "qrcode";
+import { ButtonPrimary, CreateQRForm } from "../styles";
+
+const initialState = {
+  ativo: "Bomba Centrífuga Bipartida",
+  ativo_description:
+    "Bomba que permite a passagem de água pelos canos do sistema de abastecimento de água.",
+  id_alpha: "CMB-01/45543000",
+  serial: "13324567",
+  fabricante: "Aquamec",
+  site: "3224",
+  posicao: "Instalado no objeto CMB-45/678378900",
+  status: "Em Operação",
+  tombamento: "1862739898239012398",
+  condicao: "Operacional",
+};
 
 function CreateQrCode() {
   // States do app
   const [imageUrl, setImageUrl] = useState("");
-
-  const [nomeAtivo, setNomeAtivo] = useState("");
-  const [tombamento, setTombamento] = useState("");
-  const [unidade, setUnidade] = useState("");
-  const [setor, setSetor] = useState("");
-
-  const classes = useStyles();
+  const [form, setForm] = useState(initialState);
 
   // codigo responsavel por gerar o QR code a partir do dado passado para o input
   const generateQrCode = async () => {
     try {
-      const response = await QRCode.toDataURL('"{\\"tombamento\\":' + parseInt(tombamento) + ',\\"unidade\\":\\"' + unidade + '\\",\\"setor\\":\\"' + setor + '\\",\\"ativo\\":\\"' + nomeAtivo + '\\"}"');
+      const response = await QRCode.toDataURL(JSON.stringify(form));
       setImageUrl(response);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const handleForm = (data, name) => {
+    const { value } = data.target;
+    setForm({ ...form, [name]: value });
+  };
+
   return (
-    <Card>
-      <CardContent>
+    <CreateQRForm>
+      {imageUrl ? (
+        <a href={imageUrl} download>
+          <img src={imageUrl} alt="img" />
+        </a>
+      ) : null}
 
-{/****************************************************************************************************/}
+      <TextField
+        required
+        id="outlined-textarea"
+        label="Ativo"
+        name="ativo"
+        value={form.ativo}
+        onChange={(e) => handleForm(e, "ativo")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        multiline
+        label="Descrição do Ativo"
+        nome="ativo_description"
+        value={form.ativo_description}
+        onChange={(e) => handleForm(e, "ativo_description")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="ID Alpha"
+        nome="id_alpha"
+        value={form.id_alpha}
+        onChange={(e) => handleForm(e, "id_alpha")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Serial"
+        nome="serial"
+        value={form.serial}
+        onChange={(e) => handleForm(e, "serial")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Fabricante"
+        nome="fabricante"
+        value={form.fabricante}
+        onChange={(e) => handleForm(e, "fabricante")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Site"
+        nome="site"
+        value={form.site}
+        onChange={(e) => handleForm(e, "site")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Posicao"
+        nome="posicao"
+        value={form.posicao}
+        onChange={(e) => handleForm(e, "posicao")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Status"
+        nome="status"
+        value={form.status}
+        onChange={(e) => handleForm(e, "status")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Tombamento"
+        nome="tombamento"
+        value={form.tombamento}
+        onChange={(e) => handleForm(e, "tombamento")}
+        variant="outlined"
+      />
+      <TextField
+        required
+        id="outlined-required"
+        label="Condicao"
+        nome="condicao"
+        value={form.condicao}
+        onChange={(e) => handleForm(e, "condicao")}
+        variant="outlined"
+      />
 
-        <TextField
-          required
-          id="outlined-textarea"
-          label="Descrição do ativo"
-          placeholder="Escreva aqui..."
-          multiline
-          // value={form.problemDescription}
-          onChange={(e) => setNomeAtivo(e.target.value)}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="ID Alpha"
-          placeholder="Escreva aqui..."
-          // value={form.operatorName}
-          onChange={(e) => setTombamento(e.target.value)}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Unidade do ativo"
-          placeholder="Escreva aqui..."
-          // value={form.operatorPhone}
-          onChange={(e) => setUnidade(e.target.value)}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Setor do ativo"
-          placeholder="Escreva aqui..."
-          // value={form.nature}
-          onChange={(e) => setSetor(e.target.value)}
-        ></TextField>
-
-{/****************************************************************************************************/}
-
-        <Button
-          className={classes.btn}
-          variant="contained"
-          color="primary"
-          onClick={() => generateQrCode()}
-        >
-          Gerar
-        </Button>
-        <br />
-        <br />
-        <br />
-        {imageUrl ? (
-          <a href={imageUrl} download>
-            <img src={imageUrl} alt="img" />
-          </a>
-        ) : null}
-      </CardContent>
-    </Card>
+      <ButtonPrimary onClick={() => generateQrCode()}>
+        Gerar QR CODE
+      </ButtonPrimary>
+    </CreateQRForm>
   );
 }
 
-// Criação de um estilo customizado
-const useStyles = makeStyles((theme) => ({
-  conatiner: {
-    marginTop: 10,
-  },
-  title: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#3f51b5",
-    color: "#fff",
-    padding: 20,
-  },
-  btn: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
-}));
 export default CreateQrCode;

@@ -1,11 +1,9 @@
 import React from "react";
 import {
-  Box,
   FormLabel,
   FormControl,
   FormGroup,
   FormControlLabel,
-  FormHelperText,
   Checkbox,
 } from "@material-ui/core";
 
@@ -28,56 +26,51 @@ function Electric({ form, setForm }) {
 
   return (
     <div>
-      <Box sx={{ display: "flex" }}>
-        <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-          <FormLabel component="legend">Marque as caixas</FormLabel>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={faltaEnergia}
-                  onChange={handleChange}
-                  name="faltaEnergia"
-                />
-              }
-              label="Há falta de energia na vizinhança"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={chaveFusivel}
-                  onChange={handleChange}
-                  name="chaveFusivel"
-                />
-              }
-              label="Chave fusível (canela, banana) aberta"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={tensaoNormal}
-                  onChange={handleChange}
-                  name="tensaoNormal"
-                />
-              }
-              label="Tensão da unidade normal"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={cheiroQueimado}
-                  onChange={handleChange}
-                  name="cheiroQueimado"
-                />
-              }
-              label="Cheiro de queimado"
-            />
-          </FormGroup>
-          <FormHelperText>
-            Selecione o que for verdadeiro
-          </FormHelperText>
-        </FormControl>
-      </Box>
+      <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+        <FormLabel component="legend">Selecione o que for Verdadeiro</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={faltaEnergia}
+                onChange={handleChange}
+                name="faltaEnergia"
+              />
+            }
+            label="Há falta de energia na vizinhança"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={chaveFusivel}
+                onChange={handleChange}
+                name="chaveFusivel"
+              />
+            }
+            label="Chave fusível (canela, banana) aberta"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={tensaoNormal}
+                onChange={handleChange}
+                name="tensaoNormal"
+              />
+            }
+            label="Tensão da unidade normal"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={cheiroQueimado}
+                onChange={handleChange}
+                name="cheiroQueimado"
+              />
+            }
+            label="Cheiro de queimado"
+          />
+        </FormGroup>
+      </FormControl>
     </div>
   );
 }

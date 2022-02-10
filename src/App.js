@@ -8,6 +8,7 @@ import SuccesForm from "./components/SuccesForm";
 import Header from "./components/Header";
 import UseManual from "./components/UseManual";
 import { PREFIX_PATH } from "./helper/constants";
+import AtivoDetails from "./components/AtivoDetails";
 
 //################################# APP ####################################
 function App() {
@@ -27,6 +28,11 @@ function App() {
             exact
             path={`${PREFIX_PATH}/reader-qrcode`}
             element={<ReaderQrCode />}
+          />
+          <Route
+            exact
+            path={`${PREFIX_PATH}/reader-qrcode/ativo-details`}
+            element={<AtivoDetails />}
           />
           <Route
             exact

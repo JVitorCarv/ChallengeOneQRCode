@@ -11,7 +11,6 @@ export const StyledHeader = styled.header`
 
   .content {
     display: flex;
-    padding: 10px;
     align-items: center;
     width: 100%;
     justify-content: space-between;
@@ -57,7 +56,7 @@ export const StyledHeader = styled.header`
 export const StyledManual = styled.div`
   font-family: Roboto;
   font-style: normal;
-  padding: 10px;
+  padding: 35px;
 
   h1 {
     font-weight: 500;
@@ -193,12 +192,23 @@ export const ButtonPrimary = styled(Button)`
   }
 `;
 
-
 export const StyledSuccesForm = styled.div`
   display: flex;
-  flex-direction: colunm;
+  flex-direction: column;
   font-family: Roboto;
   font-style: normal;
+  padding: 50px;
+  align-items: center;
+
+  .image-email {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 140px;
+      height: 140px;
+    }
+  }
 
   h1 {
     font-weight: 600;
@@ -226,5 +236,139 @@ export const StyledSuccesForm = styled.div`
     button {
       margin: 10px;
     }
+  }
+`;
+
+export const StyledDetailsAtivo = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  align-items: center;
+  padding: 50px;
+
+  h1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #1a1a1a;
+  }
+
+  p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #1a1a1a;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    button {
+      margin: 10px;
+    }
+  }
+
+  .content-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+
+    .content-line {
+      display: flex;
+
+      span {
+        font-weight: bold;
+        font-size: 16px;
+        color: #1a1a1a;
+        margin-right: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+        letter-spacing: 0.15px;
+        color: #1a1a1a;
+        margin: 0;
+      }
+    }
+  }
+`;
+
+export const CreateQRForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  padding: 20px;
+
+  div {
+    margin: 10px 0;
+  }
+
+  a {
+    margin: 30px 0;
+    width: 200px;
+    text-align: center;
+  }
+`;
+
+export const StyledPMForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  padding: 20px;
+  align-items: center;
+
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    button {
+      margin: 10px;
+    }
+  }
+`;
+
+export const StyledForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  width: 100%;
+
+  h1 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #1a1a1a;
+  }
+
+  div {
+    margin: 10px 0;
+  }
+
+  .MuiCheckbox-colorSecondary.Mui-checked {
+    color: #8dc544;
+
+    &:hover {
+      background-color: rgba(141, 197, 68, 0.04);
+    }
+  }
+
+  .MuiIconButton-colorSecondary:hover {
+    background-color: rgba(141, 197, 68, 0.04);
   }
 `;

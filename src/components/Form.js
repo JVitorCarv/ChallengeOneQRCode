@@ -1,8 +1,9 @@
 import React from "react";
-import { TextField, Box, MenuItem } from "@material-ui/core";
+import { TextField, MenuItem } from "@material-ui/core";
 import Electric from "./Electric";
 import Mechanical from "./Mechanical";
 import Unidentified from "./Unidentified";
+import { StyledForm } from "../styles";
 
 function Form({ form, setForm }) {
   const naturezas = [
@@ -36,63 +37,37 @@ function Form({ form, setForm }) {
   };
 
   return (
-    <div>
+    <StyledForm>
       <TextField
         required
-        id="ativo"
-        label="Serial do ativo"
-        placeholder="Insira aqui..."
-        value={form.ativo}
+        id="outlined-textarea"
+        label="ID Alpha"
+        name="id_alpha"
+        value={form.id_alpha}
+        variant="outlined"
         disabled
       />
+      <h1>Preencha os dados para solicitar o PM:</h1>
+
       <TextField
         required
-        id="setor"
-        label="Setor do ativo"
-        placeholder="Insira aqui..."
-        value={form.setor}
-        disabled
-      />
-      <TextField
-        required
-        id="tombamento"
-        label="Serial do tombamento"
-        placeholder="Insira aqui..."
-        value={form.tombamento}
-        disabled
-      />
-      <TextField
-        required
-        id="unidade"
-        label="Serial da unidade"
-        placeholder="Insira aqui..."
-        value={form.unidade}
-        disabled
+        id="outlined-textarea"
+        label="Unidade Operacional"
+        value={form.unidadeOperacional}
+        onChange={(e) => handleChange(e, "unidadeOperacional")}
+        variant="outlined"
       />
       <TextField
         required
         id="outlined-textarea"
         label="Descrição do problema"
-        placeholder="Escreva aqui..."
         multiline
+        maxRows={4}
         value={form.problemDescription}
         onChange={(e) => handleChange(e, "problemDescription")}
+        variant="outlined"
       />
-      <TextField
-        required
-        id="outlined-required"
-        label="Seu nome"
-        placeholder="Insira seu nome..."
-        value={form.operatorName}
-        onChange={(e) => handleChange(e, "operatorName")}
-      />
-      <TextField
-        required
-        id="outlined-password-input"
-        label="Escreva seu telefone"
-        value={form.operatorPhone}
-        onChange={(e) => handleChange(e, "operatorPhone")}
-      />
+
       <TextField
         id="outlined-select-natureza"
         select
@@ -100,6 +75,7 @@ function Form({ form, setForm }) {
         value={form.nature}
         onChange={(e) => handleChange(e, "nature")}
         helperText="Selecione a natureza do problema"
+        variant="outlined"
       >
         {naturezas.map((tipo) => (
           <MenuItem key={tipo.value} value={tipo.value}>
@@ -109,7 +85,7 @@ function Form({ form, setForm }) {
       </TextField>
 
       {form.nature && handleNature()}
-    </div>
+    </StyledForm>
   );
 }
 

@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref, child, push } from "firebase/database";
 import { useLocation, useNavigate } from "react-router-dom";
 import Form from "./Form";
+import { ButtonPrimary, ButtonSecondary, StyledPMForm } from "../styles";
+import { PREFIX_PATH } from "../helper/constants";
 
 //################################# START Firebase Settings ####################################
 
@@ -21,12 +23,19 @@ const database = getDatabase(app);
 
 const initialState = {
   ativo: "",
+  ativo_description: "",
+  id_alpha: "",
+  serial: "",
+  fabricante: "",
+  site: "",
+  posicao: "",
+  status: "",
   tombamento: "",
-  unidade: "",
-  setor: "",
+  condicao: "",
   problemDescription: "",
-  operatorName: "",
-  operatorPhone: "",
+  unidadeOperacional: "",
+  operatorName: "Jose Santiago Pereira",
+  operatorPhone: "(81) 988657433",
   nature: null,
   natureForm: null,
 };
@@ -34,39 +43,36 @@ const initialState = {
 //################################# APP ####################################
 function PmForm() {
   const [form, setForm] = useState(initialState);
+  const { state } = useLocation();
   const navigate = useNavigate();
-  // const { state } = useLocation();
 
-  // useEffect(() => {
-  //   setForm(state);
-  // }, [state]);
+  useEffect(() => {
+    setForm(state);
+  }, [state]);
 
   const submitOrder = () => {
-    console.log(form);
-
     // documentação para tempo real do firebase https://firebase.google.com/docs/database/web/start?authuser=0
     const newPostKey = push(child(ref(database), "ativos")).key;
 
     // const parsedData = JSON.parse(JSON.parse(scanResultWebCam));
 
     set(ref(database, `ativos/${newPostKey}`), form);
+    navigate(`${PREFIX_PATH}/success`);
+  };
 
-    navigate("/success");
+  const handleHome = () => {
+    navigate(`${PREFIX_PATH}/`);
   };
 
   return (
-    <div>
+    <StyledPMForm>
       <Form form={form} setForm={setForm} />
-      <Button
-        className={classes.btn}
-        variant="contained"
-        color="primary"
-        onClick={submitOrder}
-      >
-        Enviar PM
-      </Button>
+      <div className="action-buttons">
+        <ButtonSecondary onClick={handleHome}>cancelar</ButtonSecondary>
+        <ButtonPrimary onClick={submitOrder}>Enviar PM</ButtonPrimary>
+      </div>
       {/* END Parte do codigo HTML responsavel por Ler o QR CODE */}
-    </div>
+    </StyledPMForm>
   );
 }
 

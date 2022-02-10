@@ -21,8 +21,10 @@ function Unidentified({ form, setForm }) {
         label="Descrição adicional"
         placeholder="Escreva aqui..."
         multiline
+        style={{ width: "100%" }}
         value={state.description}
         onChange={(e) => handleChange(e, "description")}
+        variant="outlined"
       />
       <p>Caso sinta necessidade, entre em contato com o CCO:</p>
       <Button
