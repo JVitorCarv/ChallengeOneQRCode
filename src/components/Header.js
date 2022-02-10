@@ -11,7 +11,7 @@ function Header() {
   const location = useLocation();
   const [title, setTitle] = useState("Instruções de Uso");
 
-  const deltaPng = `${PREFIX_PATH}/assets/LogoDelta.png`;
+  const deltaPng = `${PREFIX_PATH}/LogoDelta.png`;
 
   useEffect(() => {
     switch (location.pathname) {

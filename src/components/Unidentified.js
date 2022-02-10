@@ -18,7 +18,7 @@ function Unidentified({ form, setForm }) {
       <TextField
         required
         id="outlined-textarea"
-        label="Descrição adicional"
+        label="Descrição adicional (necessária)"
         placeholder="Escreva aqui..."
         multiline
         value={state.description}

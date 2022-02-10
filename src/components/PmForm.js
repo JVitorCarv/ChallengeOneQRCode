@@ -59,12 +59,12 @@ function PmForm() {
 
   return (
     <Card>
-      <h2 className={classes.title}>PM Form</h2>
+      <h2 className={classes.title}>Formulário da PM</h2>
       <CardContent>
         {/* Parte do codigo HTML responsavel por gerar o QR CODE */}
 
         {/* Parte do codigo HTML responsavel por Ler o QR CODE */}
-        <h3>PM Form</h3>
+        <h3>Preencha os dados a seguir</h3>
 
         <Form form={form} setForm={setForm} />
         <Button
@@ -73,7 +73,7 @@ function PmForm() {
           color="primary"
           onClick={submitOrder}
         >
-          Submit PM
+          Enviar PM
         </Button>
         {/* END Parte do codigo HTML responsavel por Ler o QR CODE */}
       </CardContent>

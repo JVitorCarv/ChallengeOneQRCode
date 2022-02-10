@@ -47,10 +47,10 @@ export default function BasicMenu() {
         }}
       >
         <MenuItem onClick={() => handleRoute("/reader-qrcode")}>
-          Scan QR Code
+          Escanear QR Code
         </MenuItem>
         <MenuItem onClick={() => handleRoute("/create-qrcode")}>
-          Create QR Code
+          Criar QR Code
         </MenuItem>
       </Menu>
     </>
