@@ -39,11 +39,13 @@ function CreateQrCode() {
 
   return (
     <CreateQRForm>
-      {imageUrl ? (
-        <a href={imageUrl} download>
-          <img src={imageUrl} alt="img" />
-        </a>
-      ) : null}
+      <div className="container-imageqr">
+        {imageUrl ? (
+          <a href={imageUrl} download>
+            <img src={imageUrl} alt="img" />
+          </a>
+        ) : null}
+      </div>
 
       <TextField
         required

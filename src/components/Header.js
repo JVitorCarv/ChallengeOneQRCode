@@ -24,6 +24,12 @@ function Header() {
       case "/create-qrcode":
         setTitle("Geração do QR Code");
         break;
+      case "/reader-qrcode/ativo-details":
+        setTitle("Informações do Ativo");
+        break;
+      case "/success":
+        setTitle("Envio para CCO");
+        break;
       default:
         setTitle("Pedido de Manutenção");
     }
